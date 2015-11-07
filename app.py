@@ -16,12 +16,12 @@ def rate():
 
 #Get List of Supported Coins with Icon Links
 @app.route('/coins')
-def status():
+def coins():
 	return requests.get('https://shapeshift.io/getcoins').content
 
 #deposit limit
-@app.route("/limit")
-def rate():
+@app.route('/limit')
+def limit():
 	return requests.get('https://shapeshift.io/limit/btc_ltc').content
 
 #market Info
@@ -41,7 +41,7 @@ def status(username):
 
 #Time Remaining on Fixed Amount Transaction
 @app.route('/timeremaining/<address>')
-def status(username):
+def time(username):
 	return requests.get('https://shapeshift.io/timeremaining/%s' %address).content
 
 
